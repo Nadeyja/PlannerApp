@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AddActivity">
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="310dp"
-        android:layout_height="264dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
-
     <EditText
         android:id="@+id/editTextTextPersonName4"
         android:layout_width="214dp"
@@ -23,7 +13,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nazwa aktywności"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTime2"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,16 +21,16 @@
 
     <EditText
         android:id="@+id/editTextTime2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="273dp"
+        android:layout_height="47dp"
         android:ems="10"
-        android:hint="Godzina aktywności"
+        android:hint="Godzina aktywności (HH:MM:SS)"
         android:inputType="time"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <Switch
         android:id="@+id/switch2"
@@ -50,44 +40,27 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="213dp"
-        android:layout_height="57dp"
-        app:layout_constraintBottom_toTopOf="@+id/switch2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTime2">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginBottom="16dp"
         android:text="Włącz powiadomienia przed czasem"
-        app:layout_constraintBottom_toTopOf="@+id/calendarView"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
 
     <EditText
         android:id="@+id/editTextNumber"
-        android:layout_width="51dp"
-        android:layout_height="25dp"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/calendarView"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toStartOf="@+id/switch1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView5"
@@ -97,33 +70,55 @@
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:layout_marginBottom="31dp"
-        app:layout_constraintBottom_toTopOf="@+id/calendarView"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/editTextNumber"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="11dp"
         android:text="(maksymalnie 60 minut przed czasem)"
-        app:layout_constraintBottom_toTopOf="@+id/calendarView"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="Dodaj aktywność"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Typ aktywności"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTime2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="276dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="Data aktywności (YYYY/MM/DD)"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/switch2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTime2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
