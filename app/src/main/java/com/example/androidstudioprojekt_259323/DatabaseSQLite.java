@@ -41,6 +41,7 @@ public class DatabaseSQLite extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_TABLE_ACTIVITY);
+        sqLiteDatabase.execSQL("UPDATE sqlite_sequence SET seq = 1 WHERE name = 'ACTIVITIES'");
 
     }
 

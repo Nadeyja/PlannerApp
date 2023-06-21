@@ -33,7 +33,7 @@ public class Activity {
     @NonNull
     @Override
     public String toString() {
-            String str = name + ", " + type + "," + datetime + " "+id;
+            String str = name + ", " + type + ", " + datetime + " "+id;
         return str;
     }
 }

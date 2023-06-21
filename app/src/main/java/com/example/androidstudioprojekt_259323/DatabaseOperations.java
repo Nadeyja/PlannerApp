@@ -32,6 +32,7 @@ public class DatabaseOperations {
         contentValues.put(DatabaseSQLite.ACTIVITY_TIME_BEFORE,datetimebefore);
         contentValues.put(DatabaseSQLite.ACTIVITY_NOTIFICATION_BEF,notificationbefore);
         database.insert(DatabaseSQLite.DATABASE_TABLE_ACTIVITIES, null, contentValues);
+
     }
     public void deleteActivity (int id){
         database.delete(DatabaseSQLite.DATABASE_TABLE_ACTIVITIES, DatabaseSQLite.ACTIVITY_ID + " = " + id,null);
@@ -59,4 +60,5 @@ public class DatabaseOperations {
     public void removeDatabase(Context context){
         context.deleteDatabase(DatabaseSQLite.DATABASE_NAME);
     }
+
 }

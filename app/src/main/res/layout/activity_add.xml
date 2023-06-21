@@ -23,8 +23,12 @@
         android:id="@+id/editTextTime2"
         android:layout_width="273dp"
         android:layout_height="47dp"
+        android:clickable="false"
+        android:cursorVisible="false"
         android:ems="10"
-        android:hint="Godzina aktywności (HH:MM:SS)"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="Godzina aktywności (HH:MM)"
         android:inputType="time"
         app:layout_constraintBottom_toTopOf="@+id/editTextDate"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,11 +48,11 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Włącz powiadomienia przed czasem"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        android:layout_width="324dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="64dp"
+        android:text="Włącz powiadomienie przed czasem (w minutach)"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,12 +60,12 @@
 
     <EditText
         android:id="@+id/editTextNumber"
-        android:layout_width="45dp"
-        android:layout_height="35dp"
+        android:layout_width="49dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toStartOf="@+id/switch1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/switch2" />
@@ -70,21 +74,12 @@
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="(maksymalnie 60 minut przed czasem)"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
 
     <Button
         android:id="@+id/button3"
@@ -113,7 +108,11 @@
         android:id="@+id/editTextDate"
         android:layout_width="276dp"
         android:layout_height="49dp"
+        android:clickable="false"
+        android:cursorVisible="false"
         android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:hint="Data aktywności (YYYY/MM/DD)"
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/switch2"
